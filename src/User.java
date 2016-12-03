@@ -2,8 +2,7 @@
  * Created by: Leena Chaleunsouk
  * On: 12/03/16
  */
-public class User 
-{
+public class User {
 	private int userID; // should be incremental and unique
 	String userName; // should be unique
 	String email; // should be unique
@@ -16,31 +15,28 @@ public class User
 	String ssn; // needs to be 9 digits; use isDigit
 	String address;
 	String zip;
-	String state; // two letters; maybe do array so it could be a drop down list.
+	String state; // two letters; maybe do array so it could be a drop down
+					// list.
 	int seqQuestion; // drop down list; five possible choices
 	String seqAnswer; // remember to ignore case
-	
-	int count = 0; // increment userID
-	
-	public User(String userName, String email, String password, String userAnswer, String fName, String lName,
-			String ssn, String address, String zip, String state, int seqQuestion, String seqAnswer) 
-	{
-		this.userID = incrementUserID();
-		this.userName = userName;
-		this.email = email;
-		this.password = password;
-		this.userAnswer = userAnswer;
-		this.userType = whatUser(this.userAnswer);
-		this.fName = fName;
-		this.lName = lName;
-		this.ssn = ssn;
-		this.address = address;
-		this.zip = zip;
-		this.state = state;
-		this.seqQuestion = seqQuestion;
-		this.seqAnswer = seqAnswer;
+
+	// int count = 0; // increment userID
+
+	/*
+	 * public User(String userName, String email, String password, String
+	 * userAnswer, String fName, String lName, String ssn, String address,
+	 * String zip, String state, int seqQuestion, String seqAnswer) {
+	 * this.userID = incrementUserID(); this.userName = userName; this.email =
+	 * email; this.password = password; this.userAnswer = userAnswer;
+	 * this.userType = whatUser(this.userAnswer); this.fName = fName; this.lName
+	 * = lName; this.ssn = ssn; this.address = address; this.zip = zip;
+	 * this.state = state; this.seqQuestion = seqQuestion; this.seqAnswer =
+	 * seqAnswer; }
+	 */
+	public User() {
+
 	}
-	
+
 	public int getUserID() {
 		return userID;
 	}
@@ -157,29 +153,24 @@ public class User
 		this.seqAnswer = seqAnswer;
 	}
 
-	public void setCount(int count) {
-		this.count = incrementUserID();
-	}
+	/*
+	 * public void setCount(int count) { this.count = incrementUserID(); }
+	 *
 
-	public boolean whatUser(String input)
-	{
-		if (input.equalsIgnoreCase(adminPassword))
-		{
-			return true; 
-		}
-		else
-		{
+	public boolean whatUser(String input) {
+		if (input.equalsIgnoreCase(adminPassword)) {
+			return true;
+		} else {
 			return false;
 		}
 	}
-	
-	public int incrementUserID()
-	{
+
+	public int incrementUserID() {
 		count++;
 		this.userID += count;
 		return this.userID;
 	}
-
+*/
 	@Override
 	public String toString() {
 		return "User [userID=" + userID + ", userName=" + userName + ", email=" + email + ", password=" + password
