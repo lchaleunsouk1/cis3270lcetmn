@@ -3,13 +3,13 @@
  * On: 12/03/16
  */
 public class User {
-	private int userID; // should be incremental and unique
+	// private int userID; unnecessary with database
 	String userName; // should be unique
 	String email; // should be unique
 	String password;
 	boolean userType; // returns true if admin, false if customer
-	String adminPassword = "admin1!";
-	String userAnswer; // must match adminPassword to be admin
+	//String adminPassword = "admin1!"; ** move to be a check in Register class
+	//String userAnswer; // must match adminPassword to be admin ** move to be a check in Register class
 	String fName;
 	String lName;
 	String ssn; // needs to be 9 digits; use isDigit
@@ -17,12 +17,12 @@ public class User {
 	String zip;
 	String state; // two letters; maybe do array so it could be a drop down
 					// list.
-	int seqQuestion; // drop down list; five possible choices
-	String seqAnswer; // remember to ignore case
+	int secQuestion; // drop down list; five possible choices
+	String secAnswer; // remember to ignore case
 
-	// int count = 0; // increment userID
+	// int count = 0; // increment userID ** not needed
 
-	/*
+	/* ** not needed because gui will interact with getter and setter methods
 	 * public User(String userName, String email, String password, String
 	 * userAnswer, String fName, String lName, String ssn, String address,
 	 * String zip, String state, int seqQuestion, String seqAnswer) {
@@ -35,10 +35,6 @@ public class User {
 	 */
 	public User() {
 
-	}
-
-	public int getUserID() {
-		return userID;
 	}
 
 	public String getUserName() {
@@ -73,22 +69,6 @@ public class User {
 		this.userType = userType;
 	}
 
-	public String getAdminPassword() {
-		return adminPassword;
-	}
-
-	public void setAdminPassword(String adminPassword) {
-		this.adminPassword = adminPassword;
-	}
-
-	public String getUserAnswer() {
-		return userAnswer;
-	}
-
-	public void setUserAnswer(String userAnswer) {
-		this.userAnswer = userAnswer;
-	}
-
 	public String getfName() {
 		return fName;
 	}
@@ -105,11 +85,11 @@ public class User {
 		this.lName = lName;
 	}
 
-	public String getSsn() {
+	public String getSSN() {
 		return ssn;
 	}
 
-	public void setSsn(String ssn) {
+	public void setSSN(String ssn) {
 		this.ssn = ssn;
 	}
 
@@ -137,23 +117,32 @@ public class User {
 		this.state = state;
 	}
 
-	public int getSeqQuestion() {
-		return seqQuestion;
+	public int getSecQuestion() {
+		return secQuestion;
 	}
 
-	public void setSeqQuestion(int seqQuestion) {
-		this.seqQuestion = seqQuestion;
+	public void setSeqQuestion(int secQuestion) {
+		this.secQuestion = secQuestion;
 	}
 
-	public String getSeqAnswer() {
-		return seqAnswer;
+	public String getSecAnswer() {
+		return secAnswer;
 	}
 
-	public void setSeqAnswer(String seqAnswer) {
-		this.seqAnswer = seqAnswer;
+	public void setSecAnswer(String secAnswer) {
+		this.secAnswer = secAnswer;
 	}
 
-	/*
+	@Override
+	public String toString() {
+		return "User\nUsername:\t" + userName + "\nEmail:\t\t" + email + "\nPassword:\t" + password 
+				+ "\nUser Type:\t" + userType + "\nFirst Name:\t" + fName + "\nLast Name:\t" + lName 
+				+ "\nSSN:\t\t" + ssn + "\nAddress:\t" + address + "\nZip:\t\t" + zip
+				+ "\nState:\t\t" + state + "\nSecurityQuestion: " + secQuestion 
+				+ "\nSecurity Answer: " + secAnswer + "\n";
+	}
+
+	/* **unnecessary
 	 * public void setCount(int count) { this.count = incrementUserID(); }
 	 *
 
@@ -171,11 +160,5 @@ public class User {
 		return this.userID;
 	}
 */
-	@Override
-	public String toString() {
-		return "User [userID=" + userID + ", userName=" + userName + ", email=" + email + ", password=" + password
-				+ ", userType=" + userType + ", userAnswer=" + userAnswer + ", fName=" + fName + ", lName=" + lName
-				+ ", ssn=" + ssn + ", address=" + address + ", zip=" + zip + ", state=" + state + ", seqQuestion="
-				+ seqQuestion + ", seqAnswer=" + seqAnswer + "]";
-	}
+
 }
