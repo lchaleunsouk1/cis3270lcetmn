@@ -13,6 +13,7 @@ public class Flight
 	Date endTime;
 	int numOfPassengers;
 	String [] passengers = new String [numOfPassengers];
+	int cost;
 	
 	public Flight()
 	{
@@ -54,6 +55,14 @@ public class Flight
 	}
 	public void setPassengers(String[] passengers) {
 		this.passengers = passengers;
+	}
+
+	public int getCost() {
+		return cost;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
 	}
 	
 }
