@@ -1,4 +1,4 @@
-package Login;
+
 
 import java.awt.Color;
 
@@ -19,7 +19,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import Database.DatabaseConnection;
 import java.awt.BorderLayout;
 
 public class Login {
