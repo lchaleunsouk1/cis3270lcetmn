@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/ethen/Downloads/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ethen/Downloads/com.mysql.jdbc_5.1.5.jar.zip"/>
-	<classpathentry kind="lib" path="C:/Users/ethen/Desktop/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Leena/Downloads/ojdbc6.jar/ojdbc6.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Leena/Downloads/mysql-connector-java-5.1.5-bin.jar/mysql-connector-java-5.1.5-bin.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Leena/Downloads/org.eclipse.swt-3.1.jar/org.eclipse.swt-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Leena/Desktop/Images.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
