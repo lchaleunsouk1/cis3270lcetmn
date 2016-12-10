@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/ethen/Downloads/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ethen/Downloads/com.mysql.jdbc_5.1.5.jar.zip"/>
+	<classpathentry kind="lib" path="C:/Users/ethen/Desktop/mysql-connector-java-5.1.40/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

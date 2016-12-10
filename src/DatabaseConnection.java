@@ -1,32 +1,29 @@
+import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Collection;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import javax.swing.JOptionPane;
 
-public class DatabaseConnection {
-	public static Collection dbConnector() throws SQLException, ClassNotFoundException {
+public class DatabaseConnection  {
+
+	public static void main (String [] args) throws Exception{
+		getConnection();
+	}
+
+	public static Connection getConnection() throws Exception {
+
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Collection conn = (Collection) DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root",
-					"24665123");
 
-		} catch (SQLException e)
+			String driver = "oracle.jdbc.driver.OracleDriver";
+			String url = "jdbc:mysql://localhost:3306/flightreservation";
+			String username = "root";
+			String password = "24665123";
+			Class.forName(driver);
 
-		{
-			Logger.getLogger(DatabaseConnection.class.getName()).log(Level.SEVERE, null, e);
-			JOptionPane.showMessageDialog(null, e);
+			Connection conn = DriverManager.getConnection(url, username, password);
+			System.out.println("Connection Successfull!");
 
+		} catch (Exception e) {
+			System.out.println("Connection Not Successfull");
 		}
 		return null;
 	}
-
-	public static void InsertUserData(String firstname, String lastname, String address, String zip, String state,
-			String username, String password, String email, String ssn, String securityQuestion, String secAnswer) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }

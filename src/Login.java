@@ -1,14 +1,9 @@
-
-
 import java.awt.Color;
-
+import java.sql.*;
+import javax.swing.*;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,7 +16,10 @@ import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
 
-public class Login {
+public class Login extends javax.swing.JFrame {
+	Connection conn = null;
+	PreparedStatement pst = null;
+	ResultSet rs = null;
 
 	private JFrame frame;
 
@@ -43,15 +41,8 @@ public class Login {
 
 	Connection connection = null;
 
-	/**
-	 * Create the application.
-	 * 
-	 * @throws SQLException
-	 * @throws ClassNotFoundException
-	 */
-	public Login() throws ClassNotFoundException, SQLException {
+	public Login() {
 		initialize();
-		connection = (Connection) DatabaseConnection.dbConnector();
 	}
 
 	/**
@@ -77,56 +68,22 @@ public class Login {
 		usernameField.setBounds(365, 70, 144, 23);
 		frame.getContentPane().add(usernameField);
 		usernameField.setColumns(10);
-		
+
 		JPasswordField passwordField = new JPasswordField();
 		passwordField.setBounds(365, 114, 144, 23);
 		passwordField.setEchoChar('*');
 		frame.getContentPane().add(passwordField);
-		
+
 		JButton btnLogin = new JButton("Login");
 		btnLogin.setBounds(291, 217, 96, 23);
 		btnLogin.setBackground(new Color(255, 255, 255));
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				try {
-
-					String sql = "select username, password from user where username = ? and password = ?";
-					PreparedStatement pst = connection.prepareStatement(sql);
-					pst.setString(0, usernameField.getText());
-					pst.setString(1, passwordField.getText());
-
-					ResultSet rs = pst.executeQuery();
-					int count = 0;
-					while (rs.next()) {
-						count = count + 1;
-					}
-					if (count == 1) {
-						JOptionPane.showMessageDialog(null, "Username and Password is correct!");
-					}
-
-					else if (count > 1) {
-						JOptionPane.showMessageDialog(null, "Duplicate Username and Password!");
-					}
-
-					else {
-						JOptionPane.showMessageDialog(null, "Username and Password is incorrect!");
-					}
-
-					rs.close();
-					pst.close();
-
-				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, e);
-
-				}
-			}
-		});
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnForgetPassword = new JButton("Forget Password");
 		btnForgetPassword.setBounds(291, 183, 218, 23);
 		btnForgetPassword.setBackground(new Color(255, 255, 255));
 		btnForgetPassword.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
@@ -146,5 +103,24 @@ public class Login {
 		chckbxNewCheckBox.setBounds(291, 147, 196, 29);
 		frame.getContentPane().add(chckbxNewCheckBox);
 	}
+
+	private void btnLoginAction(){
+		conn = DatabaseConnection.getConnection();
+	String sql = "Select * from login where username = ? and password = ?";
+	try{
+		pst = conn.prepareStatement(sql);
+		pst.setString(1,usernameField.getText());
+		pst.setString(2,passwordField.getText());
+		rs = pst.executeQuery();
+		if(rs.next(){
+			JOptionPane.showMessageDialog(null, "Welcome user");
+			welcome w = new welcome();
+			w.setvisible(true);
+		}else
+
+	{
+		JOptionPane.showMessageDialog(null, "Invalid username or password", "Access Denied", JOptionPane.ERROR_MESSAGE);
+	}
+}
 
 }

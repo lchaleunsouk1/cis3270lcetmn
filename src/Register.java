@@ -172,7 +172,7 @@ public class Register extends JFrame {
 	}
 
 	private void InsertUserData() {
-		DatabaseConnection dbInteraction = new DatabaseConnection();
+		DatabaseConnection  = new DatabaseConnection();
 		String firstname = txtFirstName.getText();
 		String lastname = txtLastName.getText();
 		String address = txtAddress.getText();
