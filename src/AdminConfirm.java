@@ -22,7 +22,7 @@ public class AdminConfirm extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -33,7 +33,7 @@ public class AdminConfirm extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -63,11 +63,24 @@ public class AdminConfirm extends JFrame {
 			{
 				if (userKey.getText().equals("admin1!"))
 				{
-					User.isAdmin = true;
+					System.out.println("Welcome!  You may now register as an administrator");
+					Object newUser = new Admin();
+					AdminOrCustomer.isAdmin = (newUser instanceof Admin);
+					EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							try {
+								Register frame = new Register();
+								frame.setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						}
+					});
 				}
 				else
 				{
-					JOptionPane.showMessageDialog("Sorry, the key you entered is wrong.\nPlease try again or head back to make a customer account.");
+					System.out.println("Sorry, your answer was wrong.  Try again please.");
+					
 				}
 				
 			}
@@ -76,6 +89,20 @@ public class AdminConfirm extends JFrame {
 		contentPane.add(btnConfirm);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							AdminOrCustomer frame = new AdminOrCustomer();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
 		btnBack.setBounds(216, 151, 97, 25);
 		contentPane.add(btnBack);
 	}

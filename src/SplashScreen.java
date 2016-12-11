@@ -2,6 +2,7 @@
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -57,6 +58,16 @@ public class SplashScreen extends JWindow {
 				if (PROGBAR_MAX == count) {
 					SplashScreen.this.dispose();
 					progressBarTimer.stop();
+					EventQueue.invokeLater(new Runnable() {
+						public void run() {
+							try {
+								Login window = new Login();
+								window.frame.setVisible(true);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						}
+					});
 				}
 				count++;
 			}
@@ -64,7 +75,4 @@ public class SplashScreen extends JWindow {
 		progressBarTimer.start();
 	}
 
-	public static void main(String[] args) {
-		new SplashScreen();
-	}
 }

@@ -19,7 +19,7 @@ public class AdminOrCustomer extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -30,7 +30,7 @@ public class AdminOrCustomer extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -57,12 +57,10 @@ public class AdminOrCustomer extends JFrame {
 		btnAdministrator.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Object newUser = new Admin();
-				isAdmin = (newUser instanceof Admin);
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							Register frame = new Register();
+							AdminConfirm frame = new AdminConfirm();
 							frame.setVisible(true);
 						} catch (Exception e) {
 							e.printStackTrace();

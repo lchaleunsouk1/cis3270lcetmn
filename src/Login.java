@@ -15,17 +15,13 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
-import java.awt.event.InputMethodListener;
-import java.awt.event.InputMethodEvent;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 
 public class Login extends javax.swing.JFrame {
 	Connection conn = null;
 	PreparedStatement pst = null;
 	ResultSet rs = null;
 
-	private JFrame frame;
+	JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -59,7 +55,7 @@ public class Login extends javax.swing.JFrame {
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Username:");
-		lblNewLabel.setBounds(291, 82, 64, 14);
+		lblNewLabel.setBounds(291, 74, 64, 14);
 		frame.getContentPane().add(lblNewLabel);
 
 		JLabel lblPassword = new JLabel("Password:");
@@ -69,7 +65,7 @@ public class Login extends javax.swing.JFrame {
 		JTextField usernameField = new JTextField();
 		usernameField.setForeground(new Color(0, 0, 0));
 		usernameField.setBackground(new Color(255, 255, 255));
-		usernameField.setBounds(365, 78, 144, 23);
+		usernameField.setBounds(365, 70, 144, 23);
 		frame.getContentPane().add(usernameField);
 		usernameField.setColumns(10);
 
@@ -79,19 +75,12 @@ public class Login extends javax.swing.JFrame {
 		frame.getContentPane().add(passwordField);
 
 		JButton btnLogin = new JButton("Login");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				
-			}
-			}
-		});
-		btnLogin.setBounds(291, 217, 96, 25);
+		btnLogin.setBounds(291, 217, 96, 23);
 		btnLogin.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnForgetPassword = new JButton("Forget Password");
-		btnForgetPassword.setBounds(291, 179, 218, 25);
+		btnForgetPassword.setBounds(291, 183, 218, 23);
 		btnForgetPassword.setBackground(new Color(255, 255, 255));
 		btnForgetPassword.addActionListener(new ActionListener() {
 
@@ -101,13 +90,28 @@ public class Login extends javax.swing.JFrame {
 		frame.getContentPane().add(btnForgetPassword);
 
 		JButton btnRegister = new JButton("Register");
-		btnRegister.setBounds(413, 217, 96, 25);
+		btnRegister.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							AdminOrCustomer frame = new AdminOrCustomer();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
+		btnRegister.setBounds(413, 217, 96, 23);
 		btnRegister.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(btnRegister);
 
 		JLabel lblPicture = new JLabel("New label");
 		lblPicture.setIcon(new ImageIcon("C:\\Users\\ethen\\Desktop\\Admin.png"));
-		lblPicture.setBounds(33, 49, 223, 225);
+		lblPicture.setBounds(27, 49, 223, 225);
 		frame.getContentPane().add(lblPicture);
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Remember my login");
@@ -115,7 +119,7 @@ public class Login extends javax.swing.JFrame {
 		frame.getContentPane().add(chckbxNewCheckBox);
 	}
 
-	private void btnLoginAction(){
+	/*private void btnLoginAction(){
 		conn = DatabaseConnection.getConnection();
 	String sql = "Select * from login where username = ? and password = ?";
 	try{
@@ -132,6 +136,6 @@ public class Login extends javax.swing.JFrame {
 	{
 		JOptionPane.showMessageDialog(null, "Invalid username or password", "Access Denied", JOptionPane.ERROR_MESSAGE);
 	}
-}
+}*/
 
 }
