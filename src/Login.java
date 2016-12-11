@@ -15,6 +15,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import java.awt.BorderLayout;
+import java.awt.event.InputMethodListener;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class Login extends javax.swing.JFrame {
 	Connection conn = null;
@@ -55,7 +59,7 @@ public class Login extends javax.swing.JFrame {
 		frame.getContentPane().setLayout(null);
 
 		JLabel lblNewLabel = new JLabel("Username:");
-		lblNewLabel.setBounds(291, 74, 64, 14);
+		lblNewLabel.setBounds(291, 82, 64, 14);
 		frame.getContentPane().add(lblNewLabel);
 
 		JLabel lblPassword = new JLabel("Password:");
@@ -65,7 +69,7 @@ public class Login extends javax.swing.JFrame {
 		JTextField usernameField = new JTextField();
 		usernameField.setForeground(new Color(0, 0, 0));
 		usernameField.setBackground(new Color(255, 255, 255));
-		usernameField.setBounds(365, 70, 144, 23);
+		usernameField.setBounds(365, 78, 144, 23);
 		frame.getContentPane().add(usernameField);
 		usernameField.setColumns(10);
 
@@ -75,6 +79,13 @@ public class Login extends javax.swing.JFrame {
 		frame.getContentPane().add(passwordField);
 
 		JButton btnLogin = new JButton("Login");
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+			}
+			}
+		});
 		btnLogin.setBounds(291, 217, 96, 25);
 		btnLogin.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(btnLogin);

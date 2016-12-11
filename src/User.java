@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
  * Created by: Leena Chaleunsouk
  * On: 12/03/16
@@ -6,7 +8,7 @@ public class User {
 	String userName; // should be unique
 	String email; // should be unique
 	String password;
-	boolean userType; // returns true if admin, false if customer
+	String userType; // returns true if admin, false if customer
 	String fName;
 	String lName;
 	String ssn; // needs to be 9 digits; use isDigit
@@ -14,8 +16,9 @@ public class User {
 	String zip;
 	String state; // two letters; maybe do array so it could be a drop down
 					// list.
-	int secQuestion; // drop down list; five possible choices
+	String secQuestion; // drop down list; five possible choices
 	String secAnswer; // remember to ignore case
+	public static boolean isAdmin = false;
 
 	// int count = 0; // increment userID ** not needed
 
@@ -114,11 +117,11 @@ public class User {
 		this.state = state;
 	}
 
-	public int getSecQuestion() {
+	public String getSecQuestion() {
 		return secQuestion;
 	}
 
-	public void setSeqQuestion(int secQuestion) {
+	public void setSeqQuestion(String secQuestion) {
 		this.secQuestion = secQuestion;
 	}
 
@@ -139,6 +142,14 @@ public class User {
 				+ "\nSecurity Answer: " + secAnswer + "\n";
 	}
 
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+	
 	/* **unnecessary
 	 * public void setCount(int count) { this.count = incrementUserID(); }
 	 *

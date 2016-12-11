@@ -8,6 +8,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLayeredPane;
 import javax.swing.JToolBar;
 import javax.swing.JTabbedPane;
+import javax.swing.JMenuItem;
 
 public class Home extends JFrame {
 
@@ -52,5 +53,9 @@ public class Home extends JFrame {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(153, 0, 128, 18);
 		contentPane.add(tabbedPane);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
+		mntmNewMenuItem.setBounds(153, 45, 151, 24);
+		contentPane.add(mntmNewMenuItem);
 	}
 }

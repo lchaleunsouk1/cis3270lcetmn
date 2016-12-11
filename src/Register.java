@@ -1,6 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
+import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -150,6 +150,29 @@ public class Register extends JFrame {
 		contentPane.add(lblNewLabel_1);
 
 		JButton btnNewButton = new JButton("Register");
+		btnNewButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				User.isAdmin = true;
+				if (true)
+				{
+					Admin newAdmin = new Admin();
+					newAdmin.setfName(txtFirstName.getText());
+					newAdmin.setlName(txtLastName.getText());
+					newAdmin.setSSN(txtSSN.getText());
+					newAdmin.setAddress(txtAddress.getText());
+					newAdmin.setEmail(txtEmail.getText());
+					newAdmin.setPassword(txtPassword.getText());
+					newAdmin.setSecAnswer(txtSecurityAnswer.getText());
+					newAdmin.setSeqQuestion(txtSecurityQuestion.getText());
+					newAdmin.setState(txtState.getText());
+					newAdmin.setUserName(txtUsername.getText());
+					newAdmin.setZip(txtZipCode.getText());
+
+				}
+			}
+		});
 	
     
 		btnNewButton.setBounds(394, 236, 89, 25);
