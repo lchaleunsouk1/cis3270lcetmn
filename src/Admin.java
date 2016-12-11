@@ -11,10 +11,4 @@ public class Admin extends User
 		super();
 	}
 	
-	public static void addAdmin(Admin newAdmin)
-	{
-		newAdmin.setUserType("Admin");
-		userArray.add(newAdmin);
-	}
-	
 }

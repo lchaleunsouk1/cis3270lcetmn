@@ -10,10 +10,5 @@ public class Customer extends User
 	{
 		super();
 	}
-	
-	public void addCustomer(Customer newCustomer)
-	{
-		newCustomer.setUserType("Customer");
-		userArray.add(newCustomer);
-	}
+
 }

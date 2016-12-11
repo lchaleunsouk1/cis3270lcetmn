@@ -61,14 +61,6 @@ public class User {
 		this.password = password;
 	}
 
-	public boolean isUserType() {
-		return userType;
-	}
-
-	public void setUserType(boolean userType) {
-		this.userType = userType;
-	}
-
 	public String getfName() {
 		return fName;
 	}
