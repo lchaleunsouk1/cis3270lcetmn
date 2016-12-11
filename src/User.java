@@ -3,13 +3,10 @@
  * On: 12/03/16
  */
 public class User {
-	// private int userID; unnecessary with database
 	String userName; // should be unique
 	String email; // should be unique
 	String password;
 	boolean userType; // returns true if admin, false if customer
-	//String adminPassword = "admin1!"; ** move to be a check in Register class
-	//String userAnswer; // must match adminPassword to be admin ** move to be a check in Register class
 	String fName;
 	String lName;
 	String ssn; // needs to be 9 digits; use isDigit

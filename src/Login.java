@@ -75,12 +75,12 @@ public class Login extends javax.swing.JFrame {
 		frame.getContentPane().add(passwordField);
 
 		JButton btnLogin = new JButton("Login");
-		btnLogin.setBounds(291, 217, 96, 23);
+		btnLogin.setBounds(291, 217, 96, 25);
 		btnLogin.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(btnLogin);
 
 		JButton btnForgetPassword = new JButton("Forget Password");
-		btnForgetPassword.setBounds(291, 183, 218, 23);
+		btnForgetPassword.setBounds(291, 179, 218, 25);
 		btnForgetPassword.setBackground(new Color(255, 255, 255));
 		btnForgetPassword.addActionListener(new ActionListener() {
 
@@ -90,13 +90,13 @@ public class Login extends javax.swing.JFrame {
 		frame.getContentPane().add(btnForgetPassword);
 
 		JButton btnRegister = new JButton("Register");
-		btnRegister.setBounds(413, 217, 96, 23);
+		btnRegister.setBounds(413, 217, 96, 25);
 		btnRegister.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(btnRegister);
 
 		JLabel lblPicture = new JLabel("New label");
 		lblPicture.setIcon(new ImageIcon("C:\\Users\\ethen\\Desktop\\Admin.png"));
-		lblPicture.setBounds(27, 49, 223, 225);
+		lblPicture.setBounds(33, 49, 223, 225);
 		frame.getContentPane().add(lblPicture);
 
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Remember my login");
