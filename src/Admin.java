@@ -5,11 +5,9 @@
 
 public class Admin extends User implements CustomerAccess, AdminAccess
 {
-	private String userType;
-
 	public Admin() {
 		super();
-		this.userType = "Administrator";
+		super.userType = "Administrator";
 	}
 
 	@Override
@@ -25,7 +23,7 @@ public class Admin extends User implements CustomerAccess, AdminAccess
 	}
 
 	@Override
-	public void removePassenger() {
+	public void removePassenger(User user) {
 		// TODO Auto-generated method stub
 		
 	}

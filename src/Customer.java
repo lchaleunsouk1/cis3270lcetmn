@@ -5,12 +5,11 @@
 
 public class Customer extends User implements CustomerAccess
 {
-	private String userType;
 	
 	public Customer() 
 	{
 		super();
-		this.userType = "Customer";
+		super.userType = "Customer";
 	}
 
 	@Override

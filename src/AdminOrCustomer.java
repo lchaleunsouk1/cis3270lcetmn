@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 public class AdminOrCustomer extends JFrame {
 
 	private JPanel contentPane;
+	static boolean isAdmin = false;
 
 	/**
 	 * Launch the application.
@@ -34,6 +35,10 @@ public class AdminOrCustomer extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	public static boolean getIsAdmin() 
+	{
+		return isAdmin;
+	}
 	public AdminOrCustomer() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 547, 359);
@@ -50,13 +55,43 @@ public class AdminOrCustomer extends JFrame {
 		
 		JButton btnAdministrator = new JButton("Admin");
 		btnAdministrator.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Object newUser = new Admin();
+				isAdmin = (newUser instanceof Admin);
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Register frame = new Register();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		btnAdministrator.setBounds(160, 169, 100, 25);
 		contentPane.add(btnAdministrator);
 		
 		JButton btnCustomer = new JButton("Customer");
+		btnCustomer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Object newUser = new Customer();
+				isAdmin = (newUser instanceof Admin);
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Register frame = new Register();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
 		btnCustomer.setBounds(270, 169, 90, 25);
 		contentPane.add(btnCustomer);
 	}

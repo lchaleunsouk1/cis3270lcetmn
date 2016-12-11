@@ -16,7 +16,7 @@ public abstract class User {
 	String state; // two letters; maybe do array so it could be a drop down // list.
 	String secQuestion; // drop down list; five possible choices
 	String secAnswer; // remember to ignore case
-	public static boolean isAdmin = false;
+	String userType;
 
 	public User() 
 	{
@@ -29,7 +29,7 @@ public abstract class User {
 	}
 
 	public void setUserName(String userName) 
-
+	{
 		this.userName = userName;
 	}
 

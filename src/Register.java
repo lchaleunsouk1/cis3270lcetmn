@@ -34,7 +34,7 @@ public class Register extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -45,7 +45,7 @@ public class Register extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	
 	/**
@@ -154,21 +154,37 @@ public class Register extends JFrame {
 		{
 			public void actionPerformed(ActionEvent e) 
 			{
-				User.isAdmin = true;
-				if (true)
+				if ((AdminOrCustomer.getIsAdmin()))
 				{
-					Admin newAdmin = new Admin();
-					newAdmin.setfName(txtFirstName.getText());
-					newAdmin.setlName(txtLastName.getText());
-					newAdmin.setSSN(txtSSN.getText());
-					newAdmin.setAddress(txtAddress.getText());
-					newAdmin.setEmail(txtEmail.getText());
-					newAdmin.setPassword(txtPassword.getText());
-					newAdmin.setSecAnswer(txtSecurityAnswer.getText());
-					newAdmin.setSeqQuestion(txtSecurityQuestion.getText());
-					newAdmin.setState(txtState.getText());
-					newAdmin.setUserName(txtUsername.getText());
-					newAdmin.setZip(txtZipCode.getText());
+					Admin newUser = new Admin();
+					newUser.setfName(txtFirstName.getText());
+					newUser.setlName(txtLastName.getText());
+					newUser.setSSN(txtSSN.getText());
+					newUser.setAddress(txtAddress.getText());
+					newUser.setEmail(txtEmail.getText());
+					newUser.setPassword(txtPassword.getText());
+					newUser.setSecAnswer(txtSecurityAnswer.getText());
+					newUser.setSeqQuestion(txtSecurityQuestion.getText());
+					newUser.setState(txtState.getText());
+					newUser.setUserName(txtUsername.getText());
+					newUser.setZip(txtZipCode.getText());
+					System.out.print(newUser.toString());
+				}
+				else
+				{
+					Customer newUser = new Customer();
+					newUser.setfName(txtFirstName.getText());
+					newUser.setlName(txtLastName.getText());
+					newUser.setSSN(txtSSN.getText());
+					newUser.setAddress(txtAddress.getText());
+					newUser.setEmail(txtEmail.getText());
+					newUser.setPassword(txtPassword.getText());
+					newUser.setSecAnswer(txtSecurityAnswer.getText());
+					newUser.setSeqQuestion(txtSecurityQuestion.getText());
+					newUser.setState(txtState.getText());
+					newUser.setUserName(txtUsername.getText());
+					newUser.setZip(txtZipCode.getText());
+					System.out.print(newUser.toString());
 
 				}
 			}
@@ -194,7 +210,7 @@ public class Register extends JFrame {
 		contentPane.add(txtPassword);
 	}
 
-	private void InsertUserData() {
+/*	private void InsertUserData() {
 		DatabaseConnection  = new DatabaseConnection();
 		String firstname = txtFirstName.getText();
 		String lastname = txtLastName.getText();
@@ -209,5 +225,5 @@ public class Register extends JFrame {
 		String secAnswer = txtSecurityAnswer.getText();
 		DatabaseConnection.InsertUserData(firstname, lastname, address, zip, state, username, password, email, ssn,
 				securityQuestion, secAnswer);
-	}
+	}*/
 }
