@@ -13,7 +13,7 @@ public class Flight
 	LocalDateTime startTime;
 	LocalDateTime endTime;
 	int numOfPassengers;
-	int maxPassangers = 10;
+	int maxPassangers;
 	String [] passengers = new String [maxPassangers];
 	
 	public Flight()
