@@ -8,7 +8,6 @@ public class User {
 	String userName; // should be unique
 	String email; // should be unique
 	String password;
-	String userType; // returns true if admin, false if customer
 	String fName;
 	String lName;
 	String ssn; // needs to be 9 digits; use isDigit
@@ -132,14 +131,6 @@ public class User {
 				+ "\nSSN:\t\t" + ssn + "\nAddress:\t" + address + "\nZip:\t\t" + zip
 				+ "\nState:\t\t" + state + "\nSecurityQuestion: " + secQuestion 
 				+ "\nSecurity Answer: " + secAnswer + "\n";
-	}
-
-	public String getUserType() {
-		return userType;
-	}
-
-	public void setUserType(String userType) {
-		this.userType = userType;
 	}
 	
 	/* **unnecessary
