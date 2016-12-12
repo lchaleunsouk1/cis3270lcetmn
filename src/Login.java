@@ -79,15 +79,25 @@ public class Login extends javax.swing.JFrame {
 		btnLogin.setBackground(new Color(255, 255, 255));
 		frame.getContentPane().add(btnLogin);
 
-		JButton btnForgetPassword = new JButton("Forget Password");
-		btnForgetPassword.setBounds(291, 183, 218, 23);
-		btnForgetPassword.setBackground(new Color(255, 255, 255));
-		btnForgetPassword.addActionListener(new ActionListener() {
+		JButton btnForgotPassword = new JButton("Forgot Password");
+		btnForgotPassword.setBounds(291, 183, 218, 23);
+		btnForgotPassword.setBackground(new Color(255, 255, 255));
+		btnForgotPassword.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent arg0) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							ForgotPassword frame = new ForgotPassword();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
-		frame.getContentPane().add(btnForgetPassword);
+		frame.getContentPane().add(btnForgotPassword);
 
 		JButton btnRegister = new JButton("Register");
 		btnRegister.addActionListener(new ActionListener() {

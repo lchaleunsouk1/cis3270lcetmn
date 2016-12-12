@@ -53,7 +53,7 @@ public class AdminConfirm extends JFrame {
 		contentPane.add(lblWhatIsThe);
 		
 		userKey = new JTextField();
-		userKey.setBounds(306, 116, 116, 22);
+		userKey.setBounds(305, 116, 117, 23);
 		contentPane.add(userKey);
 		userKey.setColumns(10);
 		
@@ -85,7 +85,7 @@ public class AdminConfirm extends JFrame {
 				
 			}
 		});
-		btnConfirm.setBounds(325, 151, 97, 25);
+		btnConfirm.setBounds(325, 152, 97, 23);
 		contentPane.add(btnConfirm);
 		
 		JButton btnBack = new JButton("Back");
@@ -103,7 +103,7 @@ public class AdminConfirm extends JFrame {
 				});
 			}
 		});
-		btnBack.setBounds(216, 151, 97, 25);
+		btnBack.setBounds(216, 151, 97, 23);
 		contentPane.add(btnBack);
 	}
 }
