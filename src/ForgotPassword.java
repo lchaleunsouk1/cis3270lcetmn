@@ -14,13 +14,18 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class ForgotPassword extends JFrame {
-
-	private JPanel contentPane;
-	private JTextField userNameField;
-
-	/**
-	 * Launch the application.
-	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ForgotUserName frame = new ForgotUserName();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.
@@ -28,52 +33,44 @@ public class ForgotPassword extends JFrame {
 	public ForgotPassword() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 547, 359);
-		contentPane = new JPanel();
+		JPanel contentPane = new JPanel();
 		contentPane.setBackground(new Color(169, 169, 169));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblWhatIsYourUserName = new JLabel("Enter your username: ");
-		lblWhatIsYourUserName.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblWhatIsYourUserName.setBounds(68, 115, 166, 23);
-		contentPane.add(lblWhatIsYourUserName);
+		JLabel lblWhatIsYourPassword = new JLabel("Enter your password: ");
+		lblWhatIsYourPassword.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblWhatIsYourPassword.setBounds(68, 115, 166, 23);
+		contentPane.add(lblWhatIsYourPassword);
 		
-		userNameField = new JTextField();
-		userNameField.setBounds(239, 116, 183, 23);
-		contentPane.add(userNameField);
-		userNameField.setColumns(10);
+		JTextField passwordField = new JTextField();
+		passwordField.setBounds(239, 116, 183, 23);
+		contentPane.add(passwordField);
+		passwordField.setColumns(10);
 		
 		JButton btnRetrievePassword = new JButton("Confirm");
-		btnRetrievePassword.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				if (userNameField.getText().equals("admin1!"))
-				{
-					JOptionPane.showMessageDialog(null, "Welcome!  You may now register as an administrator");
-					Object newUser = new Admin();
-					AdminOrCustomer.isAdmin = (newUser instanceof Admin);
-					EventQueue.invokeLater(new Runnable() {
-						public void run() {
-							try {
-								Register frame = new Register();
-								frame.setVisible(true);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						}
-					});
-			}
-		});
 		btnRetrievePassword.setBounds(325, 151, 97, 23);
 		contentPane.add(btnRetrievePassword);
 		
-		JButton btnForgotUserName = new JButton("Forgot Username");
-		btnForgotUserName.setBounds(216, 187, 206, 23);
-		contentPane.add(btnForgotUserName);
-		
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							Login window = new Login();
+
+							window.frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
+			}
+		});
 		btnBack.setBounds(216, 151, 97, 23);
 		contentPane.add(btnBack);
+	}
 	}
 }
