@@ -63,7 +63,7 @@ public class AdminConfirm extends JFrame {
 			{
 				if (userKey.getText().equals("admin1!"))
 				{
-					System.out.println("Welcome!  You may now register as an administrator");
+					JOptionPane.showMessageDialog(null, "Welcome!  You may now register as an administrator");
 					Object newUser = new Admin();
 					AdminOrCustomer.isAdmin = (newUser instanceof Admin);
 					EventQueue.invokeLater(new Runnable() {
@@ -79,7 +79,7 @@ public class AdminConfirm extends JFrame {
 				}
 				else
 				{
-					System.out.println("Sorry, your answer was wrong.  Try again please.");
+					JOptionPane.showMessageDialog(null, "Sorry, your answer was wrong.  Try again please.");
 					
 				}
 				

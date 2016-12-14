@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -49,7 +50,7 @@ public class ForgotPassword extends JFrame {
 			{
 				if (userNameField.getText().equals("admin1!"))
 				{
-					System.out.println("Welcome!  You may now register as an administrator");
+					JOptionPane.showMessageDialog(null, "Welcome!  You may now register as an administrator");
 					Object newUser = new Admin();
 					AdminOrCustomer.isAdmin = (newUser instanceof Admin);
 					EventQueue.invokeLater(new Runnable() {
